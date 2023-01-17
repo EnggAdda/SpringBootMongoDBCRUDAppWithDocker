@@ -1,0 +1,14 @@
+version: "3"
+services:
+  enggadda:
+    image: mongo:latest
+    container_name: "enggadda"
+    ports:
+      - 27017:27017
+  spring-mongo-app :
+    image: spring-mongo-app:latest
+    container_name: spring-mongo-app
+    ports:
+      - 8080:8080
+    links:
+      - enggadda
